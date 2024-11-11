@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Altaas - Products Gallery</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/additional-css.css" />
+  </head>
+  <style>
+    .modal-content img {
+      width: 100%;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 15px;
+      border-radius: 50%;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <body class="starter-page-page">
+    <!-- Header -->
+    <header
+      id="header"
+      class="header d-flex align-items-center fixed-top"
+      style="background-color: #0b192c"
+    >
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img
+            src="assets/img/logo.png"
+            alt="Logo"
+            class="img-fluid"
+            style="width: 100px; height: 100px"
+          />
+          <!-- <h1 class="sitename">Altaas</h1> -->
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li>
+              <a href="./producst-gallery.html" class="active">Gallery</a>
+            </li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Products</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="./cotton-rags.html">Cotton Rags </a></li>
+                <li>
+                  <a href="./cotton-yarn-waste.html">Cotton Yarn Waste</a>
+                </li>
+                <!-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Deep Dropdown 1</a></li>
+              <li><a href="#">Deep Dropdown 2</a></li>
+              <li><a href="#">Deep Dropdown 3</a></li>
+              <li><a href="#">Deep Dropdown 4</a></li>
+              <li><a href="#">Deep Dropdown 5</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Dropdown 2</a></li>
+          <li><a href="#">Dropdown 3</a></li>
+          <li><a href="#">Dropdown 4</a></li> -->
+              </ul>
+            </li>
+            <li><a href="./career.html">Career</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+    <!-- Header -->
+
+    <main class="main">
+      <!-- Starter Section Section -->
+      <section id="starter-section" class="starter-section section m-0 p-0">
+        <div class="container-fluid mt-5 p-0" data-aos="fade-up">
+          <section class="ezy__blog7 light">
+            <img
+              src="https://cdn.easyfrontend.com/pictures/blog/wide-banner.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+
+            <div class="ezy__blog7-wrapper">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <h2 class="ezy__blog7-heading mb-3 mt-0">
+                      Top Picks Loved by Our Customers
+                    </h2>
+                    <p class="ezy__blog7-sub-heading mb-4">
+                      Discover our most in-demand products, cherished by
+                      customers far and wide. Elevate your experience with these
+                      popular picks.
+                    </p>
+                  </div>
+                </div>
+                <div class="row mt-5">
+                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <article class="ezy__blog7-post">
+                      <div class="position-relative">
+                        <img
+                          src="https://cdn.easyfrontend.com/pictures/blog/blog_3.jpg"
+                          alt=""
+                          class="img-fluid w-100 ezy-blog7-banner"
+                        />
+                      </div>
+                      <div class="p-3 p-md-4">
+                        <h4 class="mt-3 ezy__blog7-title fs-4">
+                          Beautiful Woman Smiling With Hands In Hair
+                        </h4>
+                        <p class="ezy__blog7-description mt-3 mb-4">
+                          It’s no secret that the digital industry is booming.
+                          From exciting startups to global brands.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <article class="ezy__blog7-post">
+                      <div class="position-relative">
+                        <img
+                          src="https://cdn.easyfrontend.com/pictures/blog/blog_13_1.jpg"
+                          alt=""
+                          class="img-fluid w-100 ezy-blog7-banner"
+                        />
+                      </div>
+                      <div class="p-3 p-md-4">
+                        <h4 class="mt-3 ezy__blog7-title fs-4">
+                          Not Your Regular Home Decoration?
+                        </h4>
+                        <p class="ezy__blog7-description mt-3 mb-4">
+                          Urna molestie at eleme ntum eu facilisis sed odio Male
+                          suada fames .
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <article class="ezy__blog7-post">
+                      <div class="position-relative">
+                        <img
+                          src="https://cdn.easyfrontend.com/pictures/blog/blog_9.jpg"
+                          alt=""
+                          class="img-fluid w-100 ezy-blog7-banner"
+                        />
+                      </div>
+                      <div class="p-3 p-md-4">
+                        <h4 class="mt-3 ezy__blog7-title fs-4">
+                          Fashion Essentials All Men Should Know
+                        </h4>
+                        <p class="ezy__blog7-description mt-3 mb-4">
+                          Assumenda non repellendus distinctio nihil dicta
+                          sapiente, quibusdam maiores.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <!-- Starter Section Section -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Our Producst Gallery</p>
+      </div>
+      <!-- End Section Title -->
+      <!-- Gallery -->
+      <div class="container mt-4" data-aos="fade-down">
+        <div class="row" id="imageGallery">
+          <!-- Initial Images -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+              onclick="openModal(this)"
+            />
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+              onclick="openModal(this)"
+            />
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Waves at Sea"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+              onclick="openModal(this)"
+            />
+          </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center my-5">
+          <button class="btn btn-primary products-btn" id="viewAllButton">
+            View All
+          </button>
+        </div>
+
+        <!-- Additional Images (Initially Hidden) -->
+        <div class="row hidden mt-4" id="additionalImages">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(19).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Sunset"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Forest Path"
+              onclick="openModal(this)"
+            />
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Lush Hills"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(20).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Desert Dunes"
+              onclick="openModal(this)"
+            />
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(21).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Sea Rocks"
+              onclick="openModal(this)"
+            />
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Snowy Peak"
+              onclick="openModal(this)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content position-relative">
+            <span class="close-btn" data-bs-dismiss="modal"
+              ><i class="fas fa-times"></i
+            ></span>
+            <img id="modalImage" src="" alt="Expanded View" />
+          </div>
+        </div>
+      </div>
+      <!-- gallery  -->
+    </main>
+
+    <footer id="footer">
+      <section class="ezy__footer16 light">
+        <div class="container">
+          <div class="row justify-content-between text-center text-md-start">
+            <div class="col-12 col-lg-3 mt-4 mt-lg-0">
+              <div
+                class="d-flex justify-content-center justify-content-lg-start align-items-center h-100"
+              >
+                <h2 class="fw-bold mb-0" style="color: #fff">ALTAAS</h2>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 mt-4 mt-lg-0">
+              <div
+                class="ezy__footer16-divider py-2 ps-md-4 d-flex flex-column justify-content-center align-items-center align-items-md-start"
+              >
+                <p class="mb-0 opacity-75" style="color: #fff">
+                  Nature’s Touch, Tailored for You
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 mt-4 mt-lg-0">
+              <div
+                class="ezy__footer16-divider py-2 ps-md-4 d-flex flex-column justify-content-center align-items-center align-items-md-start"
+              >
+                <p class="mb-0 opacity-75" style="color: #fff">
+                  From Field to Fabric Altaas Quality
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 mt-4 mt-lg-0">
+              <div
+                class="d-flex justify-content-center justify-content-md-start align-items-center h-100"
+              >
+                <ul class="ezy__footer16-social nav">
+                  <li>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ezy__footer16-bottom">
+          <div class="container">
+            <div class="row text-center text-md-start">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <p class="mb-0 small opacity-75" style="color: #fff">
+                  &copy; 2024 Altaas | All Rights Reserved.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="d-flex justify-content-center justify-content-md-end align-items-center"
+                >
+                  <a href="./privacy-page.html" style="color: #fff"
+                    >Privacy Policy</a
+                  >
+                  <div class="ezy__footer16-dot mx-2"></div>
+                  <a href="./term-conditions-page.html" style="color: #fff"
+                    >Terms & Conditions</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Open image modal
+      function openModal(img) {
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = img.src;
+        const modal = new bootstrap.Modal(
+          document.getElementById("imageModal")
+        );
+        modal.show();
+      }
+
+      // Show additional images
+      document
+        .getElementById("viewAllButton")
+        .addEventListener("click", function () {
+          document
+            .getElementById("additionalImages")
+            .classList.remove("hidden");
+          this.style.display = "none";
+        });
+    </script>
+  </body>
+</html>

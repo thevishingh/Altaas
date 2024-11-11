@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Popup and View All Button</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    .modal-content img {
+      width: 100%;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gallery -->
+  <div class="container mt-4">
+    <div class="row" id="imageGallery">
+      <!-- Initial Images -->
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Boat on Calm Water"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Wintry Mountain Landscape"
+          onclick="openModal(this)"
+        />
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Mountains in the Clouds"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Boat on Calm Water"
+          onclick="openModal(this)"
+        />
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Waves at Sea"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Yosemite National Park"
+          onclick="openModal(this)"
+        />
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-4">
+      <button class="btn btn-primary" id="viewAllButton">View All</button>
+    </div>
+
+    <!-- Additional Images (Initially Hidden) -->
+    <div class="row hidden mt-4" id="additionalImages">
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(19).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Sunset"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain4.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Forest Path"
+          onclick="openModal(this)"
+        />
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain5.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Lush Hills"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(20).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Desert Dunes"
+          onclick="openModal(this)"
+        />
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(21).webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Sea Rocks"
+          onclick="openModal(this)"
+        />
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain6.webp"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Snowy Peak"
+          onclick="openModal(this)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content position-relative">
+        <span class="close-btn" data-bs-dismiss="modal"><i class="fas fa-times"></i></span>
+        <img id="modalImage" src="" alt="Expanded View">
+      </div>
+    </div>
+  </div>
+<!-- gallery  -->
+ 
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Open image modal
+    function openModal(img) {
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = img.src;
+      const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+      modal.show();
+    }
+
+    // Show additional images
+    document.getElementById('viewAllButton').addEventListener('click', function() {
+      document.getElementById('additionalImages').classList.remove('hidden');
+      this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
