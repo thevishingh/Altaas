@@ -117,13 +117,36 @@
                       >
                         <div class="d-flex flex-column h-100 p-2">
                           <h2 class="ezy__signup15-heading">Apply Now</h2>
-                          <form class="mt-4">
+                          <form id="form"
+                            action="forms/career-form.php"
+                            method="post"
+                            enctype="multipart/form-data"
+                            class="php-email-form mt-4"
+                            data-aos="fade-up"
+                            data-aos-delay="200">
+
+                            <div class="form-group position-relative mb-3">
+                              <style>
+                                .hide-robot {
+                                  display: none;
+                                }
+                              </style>
+                              <!-- Create fields for the honeypot -->
+                              <input
+                                type="text"
+                                name="firstname"
+                                placeholder="first name"
+                                class="hide-robot"
+                              />
+                              <!-- honeypot fields end -->
                             <div class="form-group position-relative mb-3">
                               <input
                                 type="text"
-                                class="form-control"
-                                id="uemail"
-                                placeholder="Username"
+                                name="name"
+                                class="form-control p-3"
+                                id="name"
+                                placeholder="Full Name"
+                                required
                               />
                               <i
                                 class="fa-solid fa-address-card ezy__signup15-icon"
@@ -132,18 +155,22 @@
                             <div class="form-group position-relative mb-3">
                               <input
                                 type="email"
-                                class="form-control"
+                                name="email"
+                                class="form-control p-3"
                                 id="email"
                                 placeholder="Email Address"
+                                required
                               />
                               <i class="fas fa-envelope ezy__signup15-icon"></i>
                             </div>
                             <div class="form-group position-relative mb-3">
                               <input
                                 type="text"
-                                class="form-control"
-                                id="pass"
+                                name="position"
+                                class="form-control p-3"
+                                id="text"
                                 placeholder="Position"
+                                required
                               />
                               <i
                                 class="fa-solid fa-user ezy__signup15-icon"
@@ -151,10 +178,12 @@
                             </div>
                             <div class="form-group position-relative mb-3">
                               <input
-                                type="text"
-                                class="form-control"
-                                id="conPass"
+                                type="tel"
+                                name="mobile"
+                                class="form-control p-3"
+                                id="mobile"
                                 placeholder="Mobile No."
+                                required
                               />
                               <i
                                 class="fa-solid fa-mobile ezy__signup15-icon"
@@ -167,8 +196,28 @@
                               >
                               <input
                                 type="file"
-                                class="form-control"
+                                name="resume"
+                                class="form-control p-3"
                                 id="resume"
+                                accept=".pdf,.doc,.docx"
+                                required
+                              />
+                              <i
+                                class="fa-solid fa-file ezy__signup15-icon"
+                              ></i>
+                            </div>
+                            <!-- Upload Cover Letter -->
+                            <div class="form-group position-relative mb-3">
+                              <label for="coverLetter" class="mb-2"
+                                >Upload Cover Letter</label
+                              >
+                              <input
+                                type="file"
+                                name="coverletter"
+                                class="form-control p-3"
+                                id="coverLetter"
+                                accept=".pdf,.doc,.docx"
+                                required
                               />
                               <i
                                 class="fa-solid fa-file ezy__signup15-icon"
@@ -180,17 +229,26 @@
                                 >Additional Information</label
                               >
                               <textarea
-                                class="form-control"
-                                id="additional-info"
+                                class="form-control p-3"
+                                id="additionalInfo"
+                                name="addinfo"
                                 rows="2"
-                                placeholder="Add any extra information"
+                                placeholder="Any additional information you would like to provide..."
                               ></textarea>
                               <i
                                 class="fa-solid fa-circle-info ezy__signup15-icon"
                               ></i>
                             </div>
+
+                            <!-- <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">
+                              Your message has been sent. Thank you!
+                            </div> -->
+
                             <button
                               type="submit"
+                              name="submit"
                               class="btn ezy__signup15-btn-submit mt-3"
                             >
                               Submit <i class="fas fa-arrow-right"></i>

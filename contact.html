@@ -154,6 +154,14 @@
                 </p>
                 <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                 data-aos-delay="200">
+                  <style>
+                    .hide-robot {
+                      display: none;
+                    }
+                  </style>
+                  <!-- Create fields for the honeypot -->
+                  <input type="text" name="firstname" placeholder="first name" class="hide-robot" />
+                  <!-- honeypot fields end -->
                   <div class="form-group mb-3 mt-2">
                     <input type="text" name="name" class="form-control" placeholder="Your Name" required="" />
                   </div>
@@ -175,7 +183,7 @@
                     <div class="sent-message">
                       Your message has been sent. Thank you!
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary ezy__contact9-btn">
                       Submit
                     </button>
