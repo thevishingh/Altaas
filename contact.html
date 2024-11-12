@@ -152,23 +152,30 @@
                 <p class="ezy__contact9-sub-heading mb-5">
                   Have questions or need assistance? We're here to help you every step of the way.
                 </p>
-                <form>
+                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                data-aos-delay="200">
                   <div class="form-group mb-3 mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Name" />
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="" />
                   </div>
                   <div class="form-group mb-3 mt-2">
-                    <input type="email" class="form-control" placeholder=" Email" />
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="" />
                   </div>
                   <div class="form-group mb-3 mt-2">
-                    <input type="text" class="form-control" placeholder=" Mobile No." />
+                    <input type="text" class="form-control" name="mobile" placeholder="Your Mobile" required="" />
                   </div>
                   <div class="form-group mb-3 mt-2">
-                    <input type="text" class="form-control" placeholder=" Subject" />
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="" />
                   </div>
                   <div class="form-group mb-3">
-                    <textarea name="message" class="form-control" placeholder="Enter Message" rows="3"></textarea>
+                    <textarea class="form-control" name="message" rows="3" placeholder="Message" required=""></textarea>
                   </div>
                   <div class="text-end">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Your message has been sent. Thank you!
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary ezy__contact9-btn">
                       Submit
                     </button>
