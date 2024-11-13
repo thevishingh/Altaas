@@ -1,11 +1,3 @@
-/**
- * Template Name: Selecao
- * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
- * Updated: Aug 07 2024 with Bootstrap v5.3.3
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-
 (function () {
   "use strict";
 
@@ -227,188 +219,188 @@
 
 // Change the prodcts catalog;
 
-document.querySelectorAll(".service-link").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
+// document.querySelectorAll(".service-link").forEach((link) => {
+//   link.addEventListener("click", function (event) {
+//     event.preventDefault();
 
-    // Remove active class from all links
-    document
-      .querySelectorAll(".service-link")
-      .forEach((link) => link.classList.remove("active"));
-    // Add active class to the clicked link
-    this.classList.add("active");
+//     // Remove active class from all links
+//     document
+//       .querySelectorAll(".service-link")
+//       .forEach((link) => link.classList.remove("active"));
+//     // Add active class to the clicked link
+//     this.classList.add("active");
 
-    // Hide all service content sections
-    document
-      .querySelectorAll(".service-info")
-      .forEach((section) => (section.style.display = "none"));
+//     // Hide all service content sections
+//     document
+//       .querySelectorAll(".service-info")
+//       .forEach((section) => (section.style.display = "none"));
 
-    // Get the related content ID from the data attribute
-    const serviceId = this.getAttribute("data-service");
-    // Show the selected service content
-    document.getElementById(serviceId).style.display = "block";
-  });
-});
+//     // Get the related content ID from the data attribute
+//     const serviceId = this.getAttribute("data-service");
+//     // Show the selected service content
+//     document.getElementById(serviceId).style.display = "block";
+//   });
+// });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const serviceLinks = document.querySelectorAll(".products-link");
-  const serviceInfoSections = document.querySelectorAll(".products-info");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const serviceLinks = document.querySelectorAll(".products-link");
+//   const serviceInfoSections = document.querySelectorAll(".products-info");
 
-  serviceLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default anchor click behavior
+//   serviceLinks.forEach((link) => {
+//     link.addEventListener("click", function (e) {
+//       e.preventDefault(); // Prevent default anchor click behavior
 
-      // Remove 'active' class from all links
-      serviceLinks.forEach((link) => link.classList.remove("actives"));
+//       // Remove 'active' class from all links
+//       serviceLinks.forEach((link) => link.classList.remove("actives"));
 
-      // Add 'active' class to the clicked link
-      this.classList.add("actives");
+//       // Add 'active' class to the clicked link
+//       this.classList.add("actives");
 
-      // Get the service ID from the data attribute
-      const serviceId = this.getAttribute("data-service");
+//       // Get the service ID from the data attribute
+//       const serviceId = this.getAttribute("data-service");
 
-      // Hide all service info sections
-      serviceInfoSections.forEach((section) => {
-        section.style.display = "none";
-      });
+//       // Hide all service info sections
+//       serviceInfoSections.forEach((section) => {
+//         section.style.display = "none";
+//       });
 
-      // Show the selected service info section
-      const selectedSection = document.getElementById(serviceId);
-      if (selectedSection) {
-        selectedSection.style.display = "block";
-      }
-    });
-  });
-});
+//       // Show the selected service info section
+//       const selectedSection = document.getElementById(serviceId);
+//       if (selectedSection) {
+//         selectedSection.style.display = "block";
+//       }
+//     });
+//   });
+// });
 
-// Categories based on buttons
-// Get the tab elements
-const overviewTab = document.querySelector(
-  '[data-bs-target="#features-tab-5"]'
-);
-const credentialsTab = document.querySelector(
-  '[data-bs-target="#features-tab-6"]'
-);
+// // Categories based on buttons
+// // Get the tab elements
+// const overviewTab = document.querySelector(
+//   '[data-bs-target="#features-tab-5"]'
+// );
+// const credentialsTab = document.querySelector(
+//   '[data-bs-target="#features-tab-6"]'
+// );
 
-if (overviewTab && credentialsTab) {
-  // Get the product sections
-  const products1Section = document.getElementById("Products-1");
-  const products2Section = document.getElementById("Products-2");
+// if (overviewTab && credentialsTab) {
+//   // Get the product sections
+//   const products1Section = document.getElementById("Products-1");
+//   const products2Section = document.getElementById("Products-2");
 
-  // Function to handle tab clicks
-  function handleTabClick(event) {
-    event.preventDefault();
+//   // Function to handle tab clicks
+//   function handleTabClick(event) {
+//     event.preventDefault();
 
-    // Remove active class from all tabs
-    const allTabs = document.querySelectorAll(".nav-link");
-    allTabs.forEach((tab) => tab.classList.remove("active", "show"));
+//     // Remove active class from all tabs
+//     const allTabs = document.querySelectorAll(".nav-link");
+//     allTabs.forEach((tab) => tab.classList.remove("active", "show"));
 
-    // Add active class to clicked tab
-    const clickedTab = event.currentTarget;
-    clickedTab.classList.add("active", "show");
+//     // Add active class to clicked tab
+//     const clickedTab = event.currentTarget;
+//     clickedTab.classList.add("active", "show");
 
-    // Show/hide product sections based on which tab was clicked
-    if (clickedTab === overviewTab) {
-      products1Section.style.display = "block";
-      products2Section.style.display = "none";
-    } else if (clickedTab === credentialsTab) {
-      products1Section.style.display = "none";
-      products2Section.style.display = "block";
-    }
-  }
+//     // Show/hide product sections based on which tab was clicked
+//     if (clickedTab === overviewTab) {
+//       products1Section.style.display = "block";
+//       products2Section.style.display = "none";
+//     } else if (clickedTab === credentialsTab) {
+//       products1Section.style.display = "none";
+//       products2Section.style.display = "block";
+//     }
+//   }
 
-  // Add click event listeners to tabs
-  overviewTab.addEventListener("click", handleTabClick);
-  credentialsTab.addEventListener("click", handleTabClick);
+//   // Add click event listeners to tabs
+//   overviewTab.addEventListener("click", handleTabClick);
+//   credentialsTab.addEventListener("click", handleTabClick);
 
-  // Initialize the page with Products-1 visible and Products-2 hidden
-  document.addEventListener("DOMContentLoaded", () => {
-    products1Section.style.display = "block";
-    products2Section.style.display = "none";
+//   // Initialize the page with Products-1 visible and Products-2 hidden
+//   document.addEventListener("DOMContentLoaded", () => {
+//     products1Section.style.display = "block";
+//     products2Section.style.display = "none";
 
-    // Ensure the overview tab is active initially
-    overviewTab.classList.add("active", "show");
-    credentialsTab.classList.remove("active", "show");
-  });
+//     // Ensure the overview tab is active initially
+//     overviewTab.classList.add("active", "show");
+//     credentialsTab.classList.remove("active", "show");
+//   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get tab elements
-    const tabLinks = document.querySelectorAll(".features .nav-link");
+//   document.addEventListener("DOMContentLoaded", function () {
+//     // Get tab elements
+//     const tabLinks = document.querySelectorAll(".features .nav-link");
 
-    // Get product sections that we want to toggle
-    const products1Section = document.getElementById("Products-1");
-    const products2Section = document.getElementById("Products-2");
+//     // Get product sections that we want to toggle
+//     const products1Section = document.getElementById("Products-1");
+//     const products2Section = document.getElementById("Products-2");
 
-    // Function to handle tab switching
-    function handleTabClick(event) {
-      event.preventDefault();
+//     // Function to handle tab switching
+//     function handleTabClick(event) {
+//       event.preventDefault();
 
-      // Remove active class from all tabs
-      tabLinks.forEach((tab) => {
-        tab.classList.remove("active", "show");
-      });
+//       // Remove active class from all tabs
+//       tabLinks.forEach((tab) => {
+//         tab.classList.remove("active", "show");
+//       });
 
-      // Add active class to clicked tab
-      event.currentTarget.classList.add("active", "show");
+//       // Add active class to clicked tab
+//       event.currentTarget.classList.add("active", "show");
 
-      // Get the target from the clicked tab
-      const targetId = event.currentTarget.getAttribute("data-bs-target");
+//       // Get the target from the clicked tab
+//       const targetId = event.currentTarget.getAttribute("data-bs-target");
 
-      // Show/hide product sections based on which tab was clicked
-      if (targetId === "#features-tab-1") {
-        products1Section.style.display = "block";
-        products2Section.style.display = "none";
-      } else if (targetId === "#features-tab-2") {
-        products1Section.style.display = "none";
-        products2Section.style.display = "block";
-      }
-    }
+//       // Show/hide product sections based on which tab was clicked
+//       if (targetId === "#features-tab-1") {
+//         products1Section.style.display = "block";
+//         products2Section.style.display = "none";
+//       } else if (targetId === "#features-tab-2") {
+//         products1Section.style.display = "none";
+//         products2Section.style.display = "block";
+//       }
+//     }
 
-    // Add click event listeners to each tab
-    tabLinks.forEach((tab) => {
-      tab.addEventListener("click", handleTabClick);
-    });
+//     // Add click event listeners to each tab
+//     tabLinks.forEach((tab) => {
+//       tab.addEventListener("click", handleTabClick);
+//     });
 
-    // Initialize the page state
-    function initializePage() {
-      // Show Products-1 and hide Products-2 initially
-      if (products1Section && products2Section) {
-        products1Section.style.display = "block";
-        products2Section.style.display = "none";
-      }
+//     // Initialize the page state
+//     function initializePage() {
+//       // Show Products-1 and hide Products-2 initially
+//       if (products1Section && products2Section) {
+//         products1Section.style.display = "block";
+//         products2Section.style.display = "none";
+//       }
 
-      // Make sure the first tab is active
-      const firstTab = document.querySelector(".features .nav-link");
-      if (firstTab) {
-        firstTab.classList.add("active", "show");
-      }
-    }
+//       // Make sure the first tab is active
+//       const firstTab = document.querySelector(".features .nav-link");
+//       if (firstTab) {
+//         firstTab.classList.add("active", "show");
+//       }
+//     }
 
-    // Call initialize function
-    initializePage();
-  });
-}
+//     // Call initialize function
+//     initializePage();
+//   });
+// }
 
-// Mobile Prducct section
-const btnAccordion1 = document.getElementById("btnAccordion1");
-const btnAccordion2 = document.getElementById("btnAccordion2");
+// // Mobile Prducct section
+// const btnAccordion1 = document.getElementById("btnAccordion1");
+// const btnAccordion2 = document.getElementById("btnAccordion2");
 
-if(btnAccordion1)
-{
-  btnAccordion1.addEventListener("click", function () {
-  document.getElementById("accordion11").style.display = "block";
-  document.getElementById("accordion12").style.display = "none";
-  this.classList.add("active");
-  document.getElementById("btnAccordion2").classList.remove("active");
-});
-}
+// if(btnAccordion1)
+// {
+//   btnAccordion1.addEventListener("click", function () {
+//   document.getElementById("accordion11").style.display = "block";
+//   document.getElementById("accordion12").style.display = "none";
+//   this.classList.add("active");
+//   document.getElementById("btnAccordion2").classList.remove("active");
+// });
+// }
 
-if(btnAccordion2)
-{
-  btnAccordion2.addEventListener("click", function () {
-  document.getElementById("accordion12").style.display = "block";
-  document.getElementById("accordion11").style.display = "none";
-  this.classList.add("active");
-  document.getElementById("btnAccordion1").classList.remove("active");
-});
-}
+// if(btnAccordion2)
+// {
+//   btnAccordion2.addEventListener("click", function () {
+//   document.getElementById("accordion12").style.display = "block";
+//   document.getElementById("accordion11").style.display = "none";
+//   this.classList.add("active");
+//   document.getElementById("btnAccordion1").classList.remove("active");
+// });
+// }
