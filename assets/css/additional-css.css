@@ -1889,6 +1889,7 @@
   background-color: var(--ezy-theme-color);
   color: #ffffff;
   border-radius: 0;
+  width: 100%;
 }
 
 .ezy__signup15-btn-submit:hover {
