@@ -3,9 +3,9 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    require '../../third-party/PHPMailer/src/Exception.php';
-    require '../../third-party/PHPMailer/src/PHPMailer.php';
-    require '../../third-party/PHPMailer/src/SMTP.php';
+    require '../third-party/PHPMailer/src/Exception.php';
+    require '../third-party/PHPMailer/src/PHPMailer.php';
+    require '../third-party/PHPMailer/src/SMTP.php';
 
     //honey pot field
 	$honeypot = $_POST['firstname'];
