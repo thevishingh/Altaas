@@ -6,9 +6,13 @@
     require '../third-party/PHPMailer/src/Exception.php';
     require '../third-party/PHPMailer/src/PHPMailer.php';
     require '../third-party/PHPMailer/src/SMTP.php';
+    require_once '../config/config.php';
+    require_once '../config/validation.php';
 
     //honey pot field
 	$honeypot = $_POST['firstname'];
+    $response = "";
+    $errflag = false;
 
 	//check if the honeypot field is filled out. If not, send a mail.
 	if( ! empty( $honeypot ) ){
@@ -30,6 +34,96 @@
 
             //require '../vendor/autoload.php';
 
+            // Validate name
+            if (empty($_POST["name"])) {
+                $response .= "<br>Name is required";
+                $errflag = true;
+            } else {
+                $name = sanitize_input($_POST["name"]);
+                if (!validate_name($name)) {
+                    $response .= "<br>Only letters and white space allowed for name";
+                    $errflag = true;
+                }
+            }
+
+            // Validate email
+            if (empty($_POST["email"])) {
+                $response .= "<br>Email is required";
+                $errflag = true;
+            } else {
+                $email = sanitize_input($_POST["email"]);
+                if (!validate_email($email)) {
+                    $response .= "<br>Invalid email format";
+                    $errflag = true;
+                }
+            }
+
+            // Validate position
+            if (empty($_POST["position"])) {
+                $response .= "<br>Position is required";
+                $errflag = true;
+            } else {
+                $position = sanitize_input($_POST["position"]);
+                if (!validate_name($position)) {
+                    $response .= "<br>Only letters and white space allowed for Position";
+                    $errflag = true;
+                }
+            }
+ 
+            // Validate mobile number
+            if (empty($_POST["mobile"])) {
+                $response .= "<br>Mobile number is required";
+                $errflag = true;
+            } else {
+                $mobile = sanitize_input($_POST["mobile"]);
+                if (!validate_mobile($mobile)) {
+                    $response .= "<br>Invalid mobile number format. Must be 10 digits.";
+                    $errflag = true;
+                }
+            }
+    
+            // Validate additional info
+            if (!empty($_POST["addinfo"])) {
+                $addinfo = sanitize_input($_POST["addinfo"]);
+            }
+
+            // Validate resume file upload
+            if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
+                $allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                $maxSize = 2 * 1024 * 1024; // 2MB
+                if (!validate_file($_FILES['resume'], $allowedTypes, $maxSize)) {
+                    $response .= "<br>Resume: Invalid file type or size. Only PDF, DOC, and DOCX files are allowed, and size must be less than 2MB.";
+                    $errflag = true;
+                } 
+                // else {
+                //     $fileUploadSuccess = true;
+                // }
+            } else {
+                $response .= "<br>Resume is required.";
+                $errflag = true;
+            }
+
+            // Validate cover letter file upload
+            if (isset($_FILES['coverletter']) && $_FILES['coverletter']['error'] == UPLOAD_ERR_OK) {
+                $allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                $maxSize = 2 * 1024 * 1024; // 2MB
+                if (!validate_file($_FILES['coverletter'], $allowedTypes, $maxSize)) {
+                    $response .= "<br>Cover Letter: Invalid file type or size. Only PDF, DOC, and DOCX files are allowed, and size must be less than 2MB.";
+                    $errflag = true;
+                } 
+                // else {
+                //     $fileUploadSuccess = true;
+                // }
+            } else {
+                $response .= "<br>Cover Letter is required.";
+                $errflag = true;
+            }
+
+            if($errflag) {
+                echo trim($response, "<br>");
+                exit();
+            }
+
             $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
                     strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
 
@@ -43,9 +137,9 @@
             //SMTP::DEBUG_SERVER = client and server messages
             //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
             //Set the hostname of the mail server
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = $smtpHost;
             //Set the SMTP port number - likely to be 25, 465 or 587
-            $mail->Port = 587;
+            $mail->Port = $smtpPort;
 
             //Set the encryption mechanism to use:
             // - SMTPS (implicit TLS on port 465) or
@@ -55,22 +149,15 @@
             //Whether to use SMTP authentication
             $mail->SMTPAuth = true;
             //Username to use for SMTP authentication
-            $mail->Username = 'abhishek.rajput28@gmail.com';
+            $mail->Username = $smtpUser;
             //Password to use for SMTP authentication
-            $mail->Password = 'xdht pjis qdct uvct';
+            $mail->Password = $smtpPass;
             //Set who the message is to be sent from
             $mail->setFrom('abhishek.rajput28@gmail.com', 'Abhi Last');
             //Set who the message is to be sent to
             $mail->addAddress('abhishek.rajput28@gmail.com', 'A B');
 
-            if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-                $name = htmlspecialchars($_POST['name']);
-                $email = htmlspecialchars($_POST['email']);
-                $position = htmlspecialchars($_POST['position']);
-                $mobile = htmlspecialchars($_POST['mobile']);
-                // $subject = htmlspecialchars($_POST['subject']);
-                $addinfo = htmlspecialchars($_POST['addinfo']);
-
+            if ($mail->addReplyTo($email, $name)) {
                 $mail->Subject = "Career - {$name} applied for {$position}";
 
                 //Keep it simple - don't use HTML
