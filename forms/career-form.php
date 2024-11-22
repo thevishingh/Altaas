@@ -153,9 +153,9 @@
             //Password to use for SMTP authentication
             $mail->Password = $smtpPass;
             //Set who the message is to be sent from
-            $mail->setFrom('abhishek.rajput28@gmail.com', 'Abhi Last');
+            $mail->setFrom('altaastextiles@gmail.com', 'Altaas Textiles');
             //Set who the message is to be sent to
-            $mail->addAddress('abhishek.rajput28@gmail.com', 'A B');
+            $mail->addAddress('altaastextiles@gmail.com', 'Altaas Textiles');
 
             if ($mail->addReplyTo($email, $name)) {
                 $mail->Subject = "Career - {$name} applied for {$position}";
@@ -190,27 +190,27 @@
                 }
                 
                 //Send the message, check for errors
-                // if (!$mail->send()) {
+                if (!$mail->send()) {
                     //The reason for failing to send will be in $mail->ErrorInfo
                     //but it's unsafe to display errors directly to users - process the error, log it on your server.
-                    // if ($isAjax) {
-                    //     http_response_code(500);
-                    // }
+                    if ($isAjax) {
+                        http_response_code(500);
+                    }
 
                     // $response = [
                     //     "status" => false,
                     //     "message" => 'Sorry, something went wrong. Please try again later.'
                     // ];
 
-                //     $response = 'Sorry, something went wrong. Please try again later.';
-                // } else {
+                    $response = 'Sorry, something went wrong. Please try again later.';
+                } else {
                     // $response = [
                     //     "status" => true,
                     //     "message" => 'Message sent! Thanks for contacting us.'
                     // ];
 
                     $response = 'OK';
-                // }
+                }
                 
             }
             else {
